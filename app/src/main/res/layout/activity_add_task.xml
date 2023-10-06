@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="@+id/txtTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
-    <EditText
+    <TextView
         android:id="@+id/txtDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,6 +43,7 @@
         android:hint="Date"
         android:inputType="text"
         android:text=""
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtDescription"
@@ -52,8 +53,28 @@
         android:id="@+id/btnAddNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Note"
+        android:text="Add Task"
         android:textAllCaps="true"
         app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home" />
+
+    <ImageButton
+        android:id="@+id/btnAllTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/btnHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

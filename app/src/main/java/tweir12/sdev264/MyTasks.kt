@@ -3,6 +3,7 @@ package tweir12.sdev264
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,6 +22,19 @@ class MyTasks : AppCompatActivity() {
         btnAddTask = findViewById(R.id.btnAddTask)
 
         taskDB = TaskDBHelper(this)
+
+        val btnHome = findViewById<ImageButton>(R.id.btnHome)
+        btnHome.setOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnBackToTasks = findViewById<ImageButton>(R.id.btnAllTasks)
+        btnBackToTasks.setOnClickListener{
+
+            var intent = Intent(this, MyNotes::class.java)
+            startActivity(intent)
+        }
 
         btnAddTask.setOnClickListener {
             val intent = Intent(this, AddTask::class.java)

@@ -61,8 +61,49 @@ class NoteDBHelper(context: Context?) :
         }
         return cursor
     }
-
-    fun selectNoteById(id:Int){
-
+    fun lastTwoNotes(): Cursor? {
+        val query = "SELECT * FROM ${TABLE_NAME} ORDER BY ${COLUMN_ID} DESC LIMIT 2"
+        val db = this.readableDatabase
+        var cursor: Cursor? = null
+        if (db != null) {
+            cursor = db.rawQuery(query, null)
+        }
+        return cursor
     }
+
+    fun updateNoteById(id: Long, title: String, description: String, date: String): Boolean {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        cv.put(COLUMN_TITLE, title)
+        cv.put(COLUMN_DESCRIPTION, description)
+        cv.put(COLUMN_DATE, date)
+
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(id.toString())
+
+        val result = db.update(TABLE_NAME, cv, whereClause, whereArgs)
+        db.close()
+        return result > 0
+    }
+
+    fun deleteNoteById(id: Long): Boolean {
+        val db = this.writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(id.toString())
+        val result = db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+        return result > 0
+    }
+
+
+
+    fun selectNoteById(id: Long): Cursor? {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = ?"
+        val selectionArgs = arrayOf(id.toString())
+        val cursor = db.rawQuery(query, selectionArgs)
+        return cursor
+    }
+
 }

@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="LText">#4f4f4f</color>
+    <color name="LbackgroundColor">#b8ffe2</color>
+
+
+        <!-- Light Theme Colors -->
+        <color name="primaryColor">#6200EE</color>
+        <color name="secondaryColor">#03DAC6</color>
+
+        <!-- Dark Theme Colors -->
+        <color name="darkPrimaryColor">#6200EE</color>
+        <color name="darkSecondaryColor">#03DAC6</color>
+
 </resources>
