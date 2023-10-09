@@ -2,16 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="LText">#4f4f4f</color>
-    <color name="LbackgroundColor">#b8ffe2</color>
+    <color name="purple_500">#c334eb</color>
+    <color name="purple_700">#560c6b</color>
+    <color name="teal_500">#44cfa7</color>
+    <color name="teal_700">#0d5742</color>
 
 
-        <!-- Light Theme Colors -->
-        <color name="primaryColor">#6200EE</color>
-        <color name="secondaryColor">#03DAC6</color>
-
-        <!-- Dark Theme Colors -->
-        <color name="darkPrimaryColor">#6200EE</color>
-        <color name="darkSecondaryColor">#03DAC6</color>
 
 </resources>

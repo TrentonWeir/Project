@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.widget.SwitchCompat
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,18 +21,26 @@ class MainActivity : AppCompatActivity() {
     lateinit var taskDB: TaskDBHelper
     lateinit var taskAdapter: TaskAdapter
 
+    private lateinit var bg:ConstraintLayout
+    private lateinit var day_night_switch:SwitchCompat
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //THEMEING
-        val isDarkMode = false// Determine if dark mode is enabled
-
-        if (isDarkMode) {
-            setTheme(R.style.Theme_Project) // Apply dark mode theme
-        } else {
-            setTheme(R.style.Theme_Project) // Apply light mode theme
-        }
         setContentView(R.layout.activity_main)
+
+        bg = findViewById(R.id.bg)
+        day_night_switch = findViewById(R.id.day_night_switch)
+        day_night_switch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // Set background color to purple
+                bg.setBackgroundColor(resources.getColor(R.color.purple_700))
+            } else {
+                // Set background color to teal
+                bg.setBackgroundColor(resources.getColor(R.color.teal_500))
+            }
+        }
+
 
         rvAllNotes = findViewById(R.id.rvAllNotes)
         rvAllTasks = findViewById(R.id.rvAllTasks)
