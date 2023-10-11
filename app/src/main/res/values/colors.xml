@@ -7,6 +7,13 @@
     <color name="teal_500">#44cfa7</color>
     <color name="teal_700">#0d5742</color>
 
+    <color name="lText">#1E6068</color>
+    <color name="mainBackgroundColor">#b3ffe6</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="btnBackground">#A5FF4B</color>
+    <color name="fbtnBackground">#e699ff</color>
+    <color name="gridBackground">#74F4FF</color>
+
 
 
 </resources>

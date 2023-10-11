@@ -13,18 +13,42 @@
 
     </style>
     <style name="TextViewStyle">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:background">@color/teal_500</item>
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:background">@color/transparent</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">30sp</item>
     </style>
     <style name="buttonStyle">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:background">@color/teal_500</item>
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:backgroundTint">@color/btnBackground</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">30sp</item>
-        
     </style>
+    <style name="EditTextStyle">
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="RecViewStyle">
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:background">@color/gridBackground</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="FloatingButton">
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:background">@color/fbtnBackground</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="MainBackground">
+        <item name="android:textColor">@color/lText</item>
+        <item name="android:background">@color/mainBackgroundColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
 
     <style name="Theme.Project" parent="Base.Theme.Project" />
 </resources>

@@ -1,5 +1,6 @@
 package tweir12.sdev264
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,23 +23,30 @@ class MainActivity : AppCompatActivity() {
     lateinit var taskAdapter: TaskAdapter
 
     private lateinit var bg:ConstraintLayout
-    private lateinit var day_night_switch:SwitchCompat
+    private lateinit var dayNightSwitch:SwitchCompat
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bg = findViewById(R.id.bg)
-        day_night_switch = findViewById(R.id.day_night_switch)
-        day_night_switch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                // Set background color to purple
-                bg.setBackgroundColor(resources.getColor(R.color.purple_700))
-            } else {
-                // Set background color to teal
-                bg.setBackgroundColor(resources.getColor(R.color.teal_500))
-            }
+        // Initialize the SwitchCompat widget
+        dayNightSwitch = findViewById(R.id.day_night_switch)
+
+        // Set the initial state of the switch based on the theme
+        val sharedPref = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val isDarkMode = sharedPref.getBoolean("isDarkMode", false)
+        dayNightSwitch.isChecked = isDarkMode
+
+        dayNightSwitch.setOnCheckedChangeListener { _, isChecked ->
+            // Save the selected theme (dark mode) to SharedPreferences
+            val editor = sharedPref.edit()
+            editor.putBoolean("isDarkMode", isChecked)
+            editor.apply()
+
+            // Recreate the activity to apply the new theme
+            recreate()
         }
 
 

@@ -20,6 +20,7 @@
         <!-- Edit Button -->
         <ImageButton
             android:id="@+id/editTask"
+            style="@style/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_note" />
@@ -27,6 +28,7 @@
         <!-- Delete Button -->
         <ImageButton
             android:id="@+id/deleteTask"
+            style="@style/buttonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/baseline_delete_forever_24" />
