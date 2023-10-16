@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/taskItemId"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="120dp"
@@ -16,6 +17,14 @@
         android:orientation="horizontal">
 
         <!-- ImageView -->
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
         <!-- Edit Button -->
         <ImageButton

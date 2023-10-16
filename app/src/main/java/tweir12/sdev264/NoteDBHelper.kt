@@ -62,7 +62,7 @@ class NoteDBHelper(context: Context?) :
         return cursor
     }
     fun lastTwoNotes(): Cursor? {
-        val query = "SELECT * FROM ${TABLE_NAME} ORDER BY ${COLUMN_ID} DESC LIMIT 2"
+        val query = "SELECT * FROM ${TABLE_NAME} ORDER BY ${COLUMN_ID} ASC LIMIT 2"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         if (db != null) {

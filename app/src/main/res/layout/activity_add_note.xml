@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Add_Note">
 
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="248dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"

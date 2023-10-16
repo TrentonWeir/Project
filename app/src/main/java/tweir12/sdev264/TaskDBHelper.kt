@@ -62,14 +62,16 @@ class TaskDBHelper(context: Context?) :
         return cursor
     }
     fun lastTwoTasks(): Cursor? {
-        val query = "SELECT * FROM $TABLE_NAME ORDER BY $COLUMN_ID DESC LIMIT 2"
+        val query = "SELECT * FROM $TABLE_NAME ORDER BY $COLUMN_DATE DESC"
         val db = this.readableDatabase
         var cursor: Cursor? = null
         if (db != null) {
             cursor = db.rawQuery(query, null)
+
         }
         return cursor
     }
+
 
 
     fun selectTaskById(id: Long): Cursor? {

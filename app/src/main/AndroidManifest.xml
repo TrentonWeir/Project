@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
         <activity
+            android:name=".Edit_Task"
+            android:exported="false" />
+        <activity
+            android:name=".Edit_Note"
+            android:exported="false" />
+        <activity
             android:name=".MyNotes"
             android:exported="false" />
         <activity

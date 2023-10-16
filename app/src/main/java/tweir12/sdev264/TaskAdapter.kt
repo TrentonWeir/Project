@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class TaskAdapter(private val context: Context, private val cursor: Cursor?) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val idtextView:TextView = itemView.findViewById(R.id.idTextView)
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
         val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
@@ -52,7 +54,9 @@ class TaskAdapter(private val context: Context, private val cursor: Cursor?) :
                     Toast.makeText(context, "Failed to delete TASK $taskId", Toast.LENGTH_SHORT).show()
                 }
             }
+            (context as AppCompatActivity).recreate()
         }
+        holder.idtextView.text = taskId.toString()
         holder.titleTextView.text = cursor?.getString(cursor.getColumnIndex(TaskDBHelper.COLUMN_TITLE))
         holder.descriptionTextView.text = cursor?.getString(cursor.getColumnIndex(TaskDBHelper.COLUMN_DESCRIPTION))
         holder.dateTextView.text = cursor?.getString(cursor.getColumnIndex(TaskDBHelper.COLUMN_DATE))

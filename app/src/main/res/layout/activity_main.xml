@@ -20,7 +20,8 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="409dp"
-        android:layout_height="540dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="150dp"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical"
@@ -28,12 +29,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAllNotes"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
@@ -43,18 +46,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
-
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:background="?android:attr/listDivider"
-            android:backgroundTint="#00E2FF" />
+            android:backgroundTint="#000" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAllTasks"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
@@ -72,14 +74,18 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="dashboard"
         android:textAllCaps="true"
         android:textSize="35dp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="9dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
